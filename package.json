@@ -1,0 +1,67 @@
+{
+  "name": "menteez",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.11.16",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.3.4",
+    "bootstrap": "^5.2.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "crypto-browserify": "^3.12.0",
+    "express": "^4.18.2",
+    "framer-motion": "^10.10.0",
+    "fs": "^0.0.1-security",
+    "mongoose": "^7.0.3",
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7",
+    "querystring": "^0.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-html5video": "^2.5.1",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.8.0",
+    "react-scripts": "5.0.1",
+    "stream": "^0.0.2",
+    "styled-components": "^5.3.6",
+    "swiper": "^9.2.0",
+    "uuid": "^9.0.0",
+    "uuidv4": "^6.2.13",
+    "web-vitals": "^2.1.4",
+    "zlib": "^1.0.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browser": {
+    "crypto": false,
+    "stream": false
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
