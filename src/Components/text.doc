@@ -1,0 +1,411 @@
+import Navbar from './Navbar';
+import { ChakraProvider } from '@chakra-ui/react'
+import {
+    Box,
+    Flex,
+    Avatar,
+    HStack,
+    VStack,
+    IconButton,
+    Button,
+    ButtonGroup,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuDivider,
+    useDisclosure,
+    useColorModeValue,
+    Stack,
+    Image,
+    Text,
+    Heading
+} from '@chakra-ui/react';
+import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
+import { Grid, GridItem } from '@chakra-ui/react'
+import { ArrowForwardIcon } from '@chakra-ui/icons'
+import homepage1 from "../images/homepage1.jpeg";
+import ngo1 from "../images/ngo1.jpeg";
+import ngo2 from "../images/ngo2.jpeg";
+import ngo3 from "../images/ngo3.jpeg";
+import ngo4 from "../images/ngo4.jpeg";
+import ngo5 from "../images/ngo5.jpeg";
+import corosoul1 from "../images/corosoul1.jpeg";
+import corosoul2 from "../images/corosoul2.jpeg";
+import corosoul3 from "../images/corosoul3.jpeg";
+import corosoul4 from "../images/corosoul4.jpeg";
+import corosoul5 from "../images/corosoul5.jpeg";
+import corosoul6 from "../images/corosoul6.jpeg";
+import corosoul7 from "../images/corosoul7.jpeg";
+import anxiety from "../images/anxiety.jpeg";
+import depression from "../images/depression.jpeg";
+import stress from "../images/stress.jpeg";
+import Formstress from '../Formstress';
+import Formanxiety from '../Formanxiety';
+import React, { useRef, useState } from "react";
+import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+
+
+// import required modules
+import { FreeMode, Pagination } from "swiper";
+import Formdepression from '../Formdepression';
+
+
+
+
+function Main() {
+
+
+    return (
+
+        <ChakraProvider>
+            <Navbar></Navbar>
+            <>
+                <Flex justify={'center'}>
+                    <Box bg='#BACEC1' w='100%' px={40} justifyContent={'center'}>
+                        <HStack spacing={20}>
+                            <VStack spacing={10}>
+                                <Text as='i' fontSize='5xl' color='white' textAlign={'center'}>" Mental heatlh at <br></br>it's eaze "</Text>
+                                <Box
+                                    as='button'
+                                    height='60px'
+                                    width='200px'
+                                    lineHeight='1.2'
+                                    transition='all 0.2s cubic-bezier(.08,.52,.52,1)'
+                                    border='1px'
+                                    px='8px'
+                                    borderRadius='20px'
+                                    fontSize='20px'
+                                    fontWeight='semibold'
+                                    bg='#1D3124'
+                                    borderColor='#ccd0d5'
+                                    color='white'
+                                    _hover={{ bg: '#ebedf0' }}
+                                    _active={{
+                                        bg: '#dddfe2',
+                                        transform: 'scale(0.98)',
+                                        borderColor: '#bec3c9',
+                                    }}
+                                    _focus={{
+                                        boxShadow:
+                                            '0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)',
+                                    }}
+                                >
+                                    Book a Demo
+                                </Box>
+                            </VStack>
+                            <Box px={50}>
+                                <img src={homepage1} alt="first img" height="400px" width="500px" />
+                            </Box>
+                        </HStack>
+                    </Box>
+                </Flex>
+
+                <Box bg='#F6F4E8' w='100%' p={10}>
+                    <Heading as='h2' size='xl' color='red' fontWeight={'semibold'}>
+                        Self-Care Assessement
+                    </Heading>
+                    <br></br>
+                    <br></br>
+                    <Grid templateColumns='repeat(3, 1fr)' gap={10} >
+                        <GridItem p={5} bg='#1D3124' px={8}>
+                            <VStack spacing={10}>
+                                <Text fontSize='xl' color='white' textAlign={'center'} >ANXIETY</Text>
+                                <img src={anxiety} alt="first img" height="200px" width="200px" />
+                                <BrowserRouter>
+                                    <Link to='/formanxiety'>
+                                        <Button rightIcon={<ArrowForwardIcon />} bg='#BACEC1' variant="contained" LinkComponent={Link} to="/formanxiety" >
+                                            Take a Test
+                                        </Button>
+                                    </Link>
+                                    <Routes>
+                                        <Route path="/formanxiety" element={<Formanxiety />} />
+                                    </Routes>
+                                </BrowserRouter>
+                            </VStack>
+                        </GridItem>
+                        <GridItem p={5} bg='#1D3124' px={8}>
+                            <VStack spacing={10}>
+                                <Text fontSize='xl' color='white' textAlign={'center'} >DEPRESSION</Text>
+                                <img src={depression} alt="first img" height="200px" width="200px" />
+                                <BrowserRouter>
+                                    <Link to='/formdepression'>
+                                        <Button rightIcon={<ArrowForwardIcon />} bg='#BACEC1' variant="contained" LinkComponent={Link} to="/formdepression" >
+                                            Take a Test
+                                        </Button>
+                                    </Link>
+                                    <Routes>
+                                        <Route path="/formdepression" element={<Formdepression />} />
+                                    </Routes>
+                                </BrowserRouter>
+                            </VStack>
+
+                        </GridItem>
+                        <GridItem p={5} bg='#1D3124' px={8}>
+                            <VStack spacing={10}>
+                                <Text fontSize='xl' color='white' textAlign={'center'} >STRESS</Text>
+                                <img src={stress} alt="first img" height="200px" width="200px" />
+                                <BrowserRouter>
+                                    <Link to='/formstress'>
+                                        <Button rightIcon={<ArrowForwardIcon />} bg='#BACEC1' variant="contained" LinkComponent={Link} to="/formstress" >
+                                            Take a Test
+                                        </Button>
+                                    </Link>
+                                    <Routes>
+                                        <Route path="/formstress" element={<Formstress />} />
+                                    </Routes>
+                                </BrowserRouter>
+                            </VStack>
+
+
+                        </GridItem>
+
+                    </Grid>
+
+                </Box>
+
+                <Flex justify={'center'}>
+                    <Box w='100%' bg='#BACEC1' justifyContent={'center'}>
+                        <VStack>
+                            <Heading as='h2' size='xl' color='white' p={1} py={10}>
+                                Out of a working population
+                                of 500 million+ people
+                            </Heading>
+
+
+                            <HStack columnGap={20}>
+                                <HStack gap={10}>
+                                    <CircularProgress value={68} color='#1D3124' size='100px'>
+                                        <CircularProgressLabel>68%</CircularProgressLabel>
+                                    </CircularProgress>
+                                    <Text fontSize='2xl' color={'white'}>of all millennials struggle to<br></br> make friends at work</Text>
+                                </HStack>
+                                <HStack gap={10}>
+                                    <CircularProgress value={68} color='#1D3124' size='100px'>
+                                        <CircularProgressLabel>68%</CircularProgressLabel>
+                                    </CircularProgress>
+                                    <Text fontSize='2xl' color={'white'}>are stressed at work</Text>
+                                </HStack>
+                            </HStack>
+                        </VStack>
+                        <br></br>
+                        <br></br>
+
+
+                    </Box>
+                </Flex>
+                <Box bg='#F6F4E8' w='100%' p={10}>
+                    <Heading as='h2' size='xl' color='red' fontWeight={'semibold'}>
+                        NGO's Associated
+                    </Heading>
+                    <br></br>
+                    <br></br>
+                    <Grid templateColumns='repeat(5, 1fr)' gap={20}>
+                        <GridItem p={5} bg='#1D3124' px={8}>
+                            <img src={ngo1} alt="first img" height="200px" width="200px" />
+                        </GridItem>
+                        <GridItem p={5} bg='#1D3124' px={8}>
+                            <img src={ngo2} alt="first img" height="200px" width="200px" />
+                        </GridItem>
+                        <GridItem p={5} bg='#1D3124' px={8}>
+                            <img src={ngo3} alt="first img" height="200px" width="200px" />
+                        </GridItem>
+                        <GridItem p={5} bg='#1D3124' px={8}>
+                            <img src={ngo4} alt="first img" height="200px" width="200px" />
+                        </GridItem>
+                        <GridItem p={5} bg='#1D3124' px={8}>
+                            <img src={ngo5} alt="first img" height="200px" width="200px" />
+                        </GridItem>
+                    </Grid>
+                </Box>
+
+                <Flex>
+                    <Box w='100%' bg='#BACEC1' p={20}>
+                        <Swiper
+                            slidesPerView={3}
+                            spaceBetween={30}
+                            freeMode={true}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            modules={[FreeMode, Pagination]}
+                            className="mySwiper"
+                        >
+                            <SwiperSlide><img src={corosoul1} alt="first img" height="50px" width="50px" /></SwiperSlide>
+                            <SwiperSlide><img src={corosoul2} alt="first img" height="50px" width="50px" /></SwiperSlide>
+                            <SwiperSlide><img src={corosoul3} alt="first img" height="50px" width="50px" /></SwiperSlide>
+                            <SwiperSlide><img src={corosoul4} alt="first img" height="50px" width="50px" /></SwiperSlide>
+                            <SwiperSlide><img src={corosoul5} alt="first img" height="50px" width="50px" /></SwiperSlide>
+                            <SwiperSlide><img src={corosoul6} alt="first img" height="50px" width="50px" /></SwiperSlide>
+                            <SwiperSlide><img src={corosoul7} alt="first img" height="50px" width="50px" /></SwiperSlide>
+
+                        </Swiper>
+                    </Box>
+                </Flex>
+                <Flex justify={'center'} w='100%' bg='#F6F4E8' p={10} align='center'>
+
+                    <HStack gap={20}>
+                        <Heading as='h2' size='2xl' color={'1D3124'} >
+
+                            People Impacted<br></br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;350+
+                        </Heading>
+                        <Heading as='h2' size='2xl' color={'1D3124'}>
+
+                            Therapists on board<br></br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;48+
+                        </Heading>
+                    </HStack>
+
+
+                </Flex>
+            </>
+        </ChakraProvider>
+    );
+}
+
+export default Main;
+
+
+
+
+
+import { ReactNode } from 'react';
+import {
+    Box,
+    Flex,
+    Avatar,
+    HStack,
+    Link,
+    IconButton,
+    Button,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuDivider,
+    useDisclosure,
+    useColorModeValue,
+    Stack,
+    Image,
+} from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react'
+import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
+import { ArrowForwardIcon } from '@chakra-ui/icons'
+import logo from "../images/logo.jpeg";
+import { useNavigate } from 'react-router-dom';
+
+
+const Links = ['Dashboard', 'Projects', 'Team'];
+
+const NavLink = ({ children }:{ children:ReactNode}) =>(
+<Link
+px={2}
+py={1}
+rounded={'md'}
+ _hover={{
+textDecoration: 'none',
+bg: useColorModeValue('gray.200', 'gray.700'),
+}}
+href={'#'}>
+    {children}
+</Link>
+);
+
+function Action() {
+
+    return (
+        <>
+            <Box bg={'#F6F4E8'} px={4}>
+                <HStack>
+                    <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+                        <HStack spacing={8} alignItems={'center'}>
+                            <Box><img src={logo} alt="first img" height="60px" width="60px" /></Box>
+
+                            <Text fontSize='2xl' color={'black'}>NGO's</Text>
+                            <Text fontSize='2xl' color={'black'}>Let's Begin</Text>
+                            <Text fontSize='2xl' color={'black'}>Blogs  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Text>
+
+                        </HStack>
+                    </Flex>
+
+                    <HStack>
+                        <Button rightIcon={<ArrowForwardIcon />} bg='#BACEC1' variant='outline'>
+                        Sign In
+                        </Button>
+                        <Button rightIcon={<ArrowForwardIcon />} bg='#BACEC1' variant='outline'>
+                        Sign Up
+                        </Button>
+                    </HStack>
+                </HStack>
+            </Box>
+        </>
+    );
+}
+
+export default Action;
+
+
+
+<li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul className="dropdown-menu">
+                                    <li><a className="dropdown-item" href="/">Action</a></li>
+                                    <li><a className="dropdown-item" href="/">Another action</a></li>
+                                    <li><hr className="dropdown-divider"/></li>
+                                    <li><a className="dropdown-item" href="/">Something else here</a></li>
+                                </ul>
+                            </li>
+
+
+                            dark green #1D3124
+                            orange #e59560
+                            green #BACEC1
+                            cream #F6F4E8
+
+
+
+                            export const Carousel = ()=>{
+    return(
+        <div className="slider">
+        <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        freeMode={true}
+         autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Autoplay,FreeMode, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide><img src={corosoul1} alt="first img" height="50px" width="50px"/></SwiperSlide>
+        <SwiperSlide><img src={corosoul2} alt="first img" height="50px" width="50px"/></SwiperSlide>
+        <SwiperSlide><img src={corosoul3} alt="first img" height="50px" width="50px"/></SwiperSlide>
+        <SwiperSlide><img src={corosoul4} alt="first img" height="50px" width="50px"/></SwiperSlide>
+        <SwiperSlide><img src={corosoul5} alt="first img" height="50px" width="50px"/></SwiperSlide>
+        <SwiperSlide><img src={corosoul6} alt="first img" height="50px" width="50px"/></SwiperSlide>
+        <SwiperSlide><img src={corosoul7} alt="first img" height="50px" width="50px"/></SwiperSlide>
+        
+      </Swiper>
+        </div>
+    )
+}
+
+
+
+
+
+

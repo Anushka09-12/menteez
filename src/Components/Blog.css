@@ -1,0 +1,16 @@
+.blocks {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
+  
+  .boxes p {
+    margin: 30px;
+  }
+  .boxes img{
+    margin: 30px;
+  }
+  .boxes {
+    background-color: #e59560;
+    margin: 30px;
+  }
